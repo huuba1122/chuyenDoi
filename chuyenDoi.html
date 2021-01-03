@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>chyển đổi đơn vị</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="JS/convert.js">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="img/fontawesome-free-5.15.1-web/css/all.min.css">
+</head>
+<body>
+    <div class="all">
+        <div class="heading">
+            <h1>chuyển đổi đơn vị</h1>
+        </div>
+        <div class="currency">
+            <div class="currency__cv">
+                <div class="currency__cv-header">
+                    <span>Tiền tệ</span>
+                </div>
+                <div class="currency__cv-body">
+
+                    <div class="currency__cv-list">
+                        <select name="" id="select_from" class="currency__cv-select">
+                            <option value="21.24" class="currency__cv-option">(₩) Won Hàn Quốc (KRW)
+<!--                                <span class="option_contry">(₩) Won Hàn Quốc (KRW)</span>-->
+                            </option>
+                            <option value="3541.54" class="currency__cv-option">(¥) Yuan Trung Quốc (RMB)
+<!--                                <span class="option_contry">(¥) Yuan Trung Quốc (RMB)</span>-->
+                            </option>
+                            <option value="23088" class="currency__cv-option">($) Dola Mỹ (USD)<
+<!--                                <span class="option_contry">($) Dola Mỹ (USD)</span>-->
+                            </option>
+                            <option value="223.87" class="currency__cv-option">(¥) Yên Nhật Bản (JPY)
+<!--                                <span class="option_contry">(¥) Yên Nhật Bản (JPY)</span>-->
+                            </option>
+                            <option value="31497" class="currency__cv-option">(£) Bảng Anh (GBP)
+<!--                                <span class="option_contry">(£) Bảng Anh (GBP)</span>-->
+                            </option>
+                            <option value="1" class="currency__cv-option">(₫) Đồng Việt Nam (VND)
+<!--                                <span class="option_contry">(₫) Đồng Việt Nam (VND)</span>-->
+                            </option>
+                        </select>
+                        <div class="currency__cv-input">
+                            <input type="number" onkeyup="convertFrom()" id="input_cr_from" placeholder="Nhập số tiền ">
+                        </div>
+                    </div>
+
+                    <div class="currency__cv-icon">
+                        <i class="currency__cv-icon-arrow fas fa-angle-double-right"></i>
+                    </div>
+
+                    <div class="currency__cv-list">
+                        <select name="" id="select_to" class="currency__cv-select">
+                            <option value="21.24" class="currency__cv-option">(₩) Won Hàn Quốc (KRW)
+<!--                                <span class="option_contry">(₩) Won Hàn Quốc (KRW)</span>-->
+                            </option>
+                            <option value="3541.54" class="currency__cv-option">(¥) Yuan Trung Quốc (RMB)
+<!--                                <span class="option_contry">(¥) Yuan Trung Quốc (RMB)</span>-->
+                            </option>
+                            <option value="23088" class="currency__cv-option">($) Dola Mỹ (USD)
+<!--                                <span class="option_contry">($) Dola Mỹ (USD)</span>-->
+                            </option>
+                            <option value="223.87" class="currency__cv-option">Yên Nhật Bản (JPY)
+<!--                                <span class="option_contry">(¥) Yên Nhật Bản (JPY)</span>-->
+                            </option>
+                            <option value="31497" class="currency__cv-option">(£) Bảng Anh (GBP)
+<!--                                <span class="option_contry">(£) Bảng Anh (GBP)</span>-->
+                            </option>
+                            <option value="1" class="currency__cv-option">(₫) Đồng Việt Nam (VND)
+<!--                                <span class="option_contry">(₫) Đồng Việt Nam (VND)</span>-->
+                            </option>
+                        </select>
+                        <div class="currency__cv-input">
+                            <input type="number" onkeyup="convertTo()" id="input_cr_to" placeholder="Nhập số tiền">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="currency__table">
+                <div class="currency__cv-header">
+                    <span>bảng giá tiền tệ</span>
+                </div>
+                <div class="currency__table-cv">
+                    <table class="table-cv-vnd">
+                        <tr>
+                            <th>Đơn vị tiền tệ</th>
+                            <th>Việt Nam đồng (VND)</th>
+                            <th>Đơn vị tiền tệ</th>
+                            <th>Việt Nam đồng (VND)</th>
+                        </tr>
+                        <tr>
+                            <td>Đồng đô la mỹ USD</td>
+                            <td>23088.00</td>
+                            <td>Won Hàn Quốc (KRW)</td>
+                            <td>21.24</td>
+                        </tr>
+                        <tr>
+                            <td>Yuan Trung Quốc (RMB)</td>
+                            <td>3534.54</td>
+                            <td>Yên Nhật Bản (JPY)</td>
+                            <td>223.87</td>
+                        </tr>
+                        <tr>
+                            <td>Bảng Anh (GBP)</td>
+                            <td>31497.00</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+<!--        chỉ số BMI-->
+        <div class="BMI">
+            <div class="BMI__cv">
+                <div class="BMI__header">
+                   chỉ số bmi
+                </div>
+                <div class="BMI__body">
+                    <div class="BMI__body-cv">
+                        <div class="BMI__body-input">
+                            <div class="body-input-name">
+                                <span> Cân nặng (kg)</span>
+                            </div>
+                            <input type="number" onkeyup="BMI_function1()" id="input_weight" placeholder="Nhập cân nặng (kg)">
+                        </div>
+                        <div class="BMI__body-input">
+                            <div class="body-input-name">
+                                <span> Chiều cao (m)</span>
+                            </div>
+                            <input type="number" onkeyup="BMI_function1()" id="input_height" placeholder="Nhập chiều cao (m)">
+                        </div>
+                        <div class="BMI__body-out">
+                            <div class="body-input-name">
+                                <span>Chỉ số BMI </span>
+                            </div>
+                            <input type="text" id="out_bmi" placeholder="Chỉ số BMI">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="BMI__rate">
+                <div class="BMI__table">
+                    <div class="BMI__header">
+                        <span>bảng đánh giá chỉ số bmi</span>
+                    </div>
+                    <div>
+                        <table>
+                            <tr>
+                                <th>Phân loại</th>
+                                <th>BMI - WHO</th>
+                                <th>BMI - IDI & WPRO</th>
+                            </tr>
+                            <tr>
+                                <td>Gầy</td>
+                                <td> <18,5</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Bình thường</td>
+                                <td>18,5 - 24,9</td>
+                                <td>18,5 - 22,9</td>
+                            </tr>
+                            <tr>
+                                <td>Thừa cân</td>
+                                <td>>= 25</td>
+                                <td>>= 23</td>
+                            </tr>
+                            <tr>
+                                <td>Tiền béo phì</td>
+                                <td>25 - 29,9</td>
+                                <td>23 - 24,9</td>
+                            </tr>
+                            <tr>
+                                <td>Béo phì độ I</td>
+                                <td>30 - 34,9</td>
+                                <td>25 - 29,9</td>
+                            </tr>
+                            <tr>
+                                <td>Béo phì độ II</td>
+                                <td>35 - 39,9</td>
+                                <td>>= 30</td>
+                            </tr>
+                            <tr>
+                                <td>Béo phì độ III</td>
+                                <td>>= 40</td>
+                                <td></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="BMI__centent">
+                    <p>
+                        Đây là bảng phân loại mức độ gầy - béo của một người dựa vào chỉ số BMI. Thang phân loại của Tổ chức y tế thế giới (WHO) dành cho người châu Âu và thang phân loại của Hiệp hội đái đường các nước châu Á (IDI & WPRO) được áp dụng cho người châu Á.
+                    </p>
+                    <p>
+                        Công thức tính chỉ số BMI tương đối đơn giản, chỉ dựa vào 2 chỉ số là chiều cao (m) và cân nặng (kg): <br>
+                        BMI = Cân nặng/ [(Chiều cao)2]
+                    </p>
+                    <p>
+                        Dựa vào thang phân loại của IDI & WPRO dành cho người châu Á thì BMI lý tưởng của người Việt Nam là từ 18,5 đến 22,9.
+                    </p>
+                    <p>
+                        Do đó, chỉ cần dựa vào số lẻ chiều cao, bạn có thể nhận định ngay mức cân nặng tối đa cho phép. Nếu bạn vượt qua mức cân nặng tối đa tức là bạn đã bị thừa cân.
+                    </p>
+                    <p>
+                        Chỉ số BMI không áp dụng cho phụ nữ có thai, vận động viên, người tập thể hình
+                    </p>
+                </div>
+            </div>
+            
+
+        </div>
+    </div>
+</body>
+
+<script src="JS/convert.js"></script>
+
+</html>
